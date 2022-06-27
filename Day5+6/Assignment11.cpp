@@ -4,8 +4,8 @@ using namespace std;
 
 CLine::CLine(int length, int color)
 {
-    length = length;
-    color = color;
+    this->length = length;
+    this->color = color;
 }
 
 /******************************
@@ -27,8 +27,8 @@ void CLine::draw(int x, int y, HDC device_context)
 
 CCircle::CCircle(int radium, int color)
 {
-    radium = radium;
-    color = color;
+    this->radium = radium;
+    this->color = color;
 }
 
 /******************************
@@ -50,9 +50,9 @@ void CCircle::draw(int x, int y, HDC device_context)
 
 CRectangle::CRectangle(int width, int height, int color)
 {
-    width = width;
-    height = height;
-    color = color;
+    this->width = width;
+    this->height = height;
+    this->color = color;
 }
 
 /******************************
@@ -74,9 +74,9 @@ void CRectangle::draw(int x, int y, HDC device_context)
 
 CSquare::CSquare(int side, int color)
 {
-    width = side;
-    height = side;
-    color = color;
+    this->width = side;
+    this->height = side;
+    this->color = color;
 }
 
 int main()
@@ -121,7 +121,7 @@ int main()
             int_input = order[i] - '0';
             if (int_input < 1 || int_input > 4)
                 exit(0);
-            //Draw shapes
+            //Draw a shape
             Picture.Arr_ptr[int_input - 1]->draw(Array_CoordinatesX[i], Array_CoordinatesY[i], device_context);
         }
         ReleaseDC(console_handle, device_context);
